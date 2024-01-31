@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <link rel="icon" type="img/png" href="assets/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+	{% from 'bootstrap5/form.html' import render_form %}
+</head>
+<body>
+    <header>
+        <div class="content-header">
+            <div class="logo"><h3>Jose Pedro Gil Suarez : Software Developer</h3></div>
+            <div class="item"><a href="#productos">Productos</a></div>
+            <div class="item"><a href="#servicios">Servicios</a></div>
+            <div class="item"><a href="#contacto">Contactanos</a></div>
+        </div>
+    </header>
+    <section>
+        <div class="content-banner">
+            <div class="banner-text">
+                <h1>About me</h1>
+                <p>A dedicated computer science student currently enrolled in Holberton campus.
+					I exhibit strong discipline and a relentless pursuit of knowledge.
+					Eager to learn, I am committed to continuous personal development,
+					fostering a growth-oriented mindset.</p>
+                <center><button>Ver</button></center>
+            </div>
+            <div class="banner-img">
+                <img src="static/assets/img/preview1.png" alt="app_preview">
+            </div>
+        </div>
+    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#a2d9ff" fill-opacity="1" d="M0,192L80,181.3C160,171,320,149,480,149.3C640,149,800,171,960,186.7C1120,203,1280,213,1360,218.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
+    <div class="contents">
+        <section>
+            <h1>Funcionalidades</h1>
+            <div class="div-flex">
+                <div class="parts">
+                    <div class="content-img">
+                        <div class="img"></div>
+                    </div>
+                </div>
+                <div class="parts">
+                    <h2>Subtitulo</h2>
+                    <p>texto sobre algo interesante saviaaa savia vasassdsdsd</p>
+                </div>
+            </div>
+        </section>
+        <section id="productos">
+			<h1>Productos más pedidos</h1>
+			<div class="div-grid">
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview1.png">
+					</div>
+					<h3>Tortas</h3>
+					<p>De todos los rellenos y de la forma que mas te guste</p>
+				</div>
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview4.png">
+					</div>
+					<h3>Biscochuelos</h3>
+					<p>Ideales para toda ocacision</p>
+				</div>
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview3.png">
+					</div>
+					<h3>Bocaditos</h3>
+					<p>Ideales para toda ocacision</p>
+				</div>
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview4.png">
+					</div>
+					<h3>Panes</h3>
+					<p>De todas las variedades y texturas</p>
+				</div>
+			</div>
+		</section>
+        <section id="servicios">
+			<h1>Servicios que realizamos</h1>
+			<div class="div-grid">
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview2.png">
+					</div>
+					<h3>Horneado</h3>
+					<p>Si tienes algun carne que quisieras hornear, nosotros te ayudamos con ello</p>
+				</div>
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview2.png">
+					</div>
+					<h3>Compra en linea</h3>
+					<p>Por nuestro canales de venta digitales, puedes comprar sin salir de casa</p>
+				</div>
+				<div class="grid-item">
+					<div class="content-img-pro">
+						<img src="static/assets/img/preview2.png">
+					</div>
+					<h3>Delivery</h3>
+					<p>Tus compras llegaran a la ti sin necesidad de salir de casa</p>
+				</div>
+			</div>
+		</section>
+        <section id="contacto">
+			<h1>Comunicate con nosotros</h1>
+			<div class="div-flex">
+				<div class="parts">
+					<h2>Tienes pensado un evento o reunión?</h2>
+					<p>Dejanos un mensaje con lo que necesitas saber para resolver cualquier duda que tengas</p>
+					<h4>Correo: prueba@gmail.com</h4>
+					<h4>Celulares: 999 888 777 / 999 555 333</h4>
+				</div>
+				<div class="parts">
+					{% if message %}
+						<h2 style="margin-bottom: 10px;">{{ message }}</h2>
+					{% else %}
+						<h2 style="margin-bottom: 10px;">Envia tu consulta ahora!</h2>
+					{% endif %}
+
+					{{ form.csrf_token }}
+					{{ render_form(form) }}
+				
+				</div>
+			</div>
+		</section>
+    </div>
+    <footer>
+        <center><p> La tribu app by JotaLgs</p></center>
+    </footer>
+</body>
